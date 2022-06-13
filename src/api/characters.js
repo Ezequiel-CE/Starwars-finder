@@ -25,3 +25,16 @@ export const getCharactersByName = async (name, page) => {
     console.log(error);
   }
 };
+
+export const getCharactersByid = async (id) => {
+  try {
+    const response = await fetch(`https://swapi.dev/api/people/${id}`);
+    if (!response.ok) {
+      throw new Error("no se pudo obtener info del personaje");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

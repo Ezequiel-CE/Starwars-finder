@@ -5,6 +5,7 @@ import CharacterGallery from "../components/characters/CharacterGallery";
 import { setDataSearch, setLoadingSearch } from "../store/name-slice";
 import { PaginationComponent } from "../components/ui/PaginationComponent";
 import Spiner from "../components/ui/Spiner";
+import NoFound from "../components/name/Nofound";
 
 const Search = () => {
   const dispatcher = useDispatch();
@@ -32,6 +33,14 @@ const Search = () => {
       })
       .catch((err) => console.log(err));
   }, [enteredSearch, dispatcher, page]);
+
+  if (data && !loading && data.results.length < 1) {
+    return (
+      <>
+        <NoFound />
+      </>
+    );
+  }
 
   return (
     <>

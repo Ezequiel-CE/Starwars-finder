@@ -1,6 +1,6 @@
 import SearchNameInput from "../components/name/SearchNameInput";
 import { NameContainer, NameTitle } from "../components/name/name.styled";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setEnteredSearch } from "../store/name-slice";
 import { useEffect } from "react";
 
