@@ -1,16 +1,36 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getCharactersByid } from "../api/characters";
+import CharacterInfo from "../components/character/CharacterInfo";
+import Spiner from "../components/ui/Spiner";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setDataCharaPage,
+  setErrorCharaPage,
+  setLoadingCharaPage,
+} from "../store/characterPage-slice";
 
 const CharacterPage = () => {
+  const dispatcher = useDispatch();
   const { id } = useParams();
-  console.log(id);
+  const { data, loading, error } = useSelector((state) => state.characterPage);
 
   useEffect(() => {
-    getCharactersByid(id).then((data) => console.log(data));
-  }, [id]);
+    dispatcher(setLoadingCharaPage(true));
+    getCharactersByid(id)
+      .then((data) => {
+        dispatcher(setDataCharaPage(data));
+        dispatcher(setLoadingCharaPage(false));
+      })
+      .catch((error) => {});
+  }, [id, dispatcher]);
 
-  return <div> pagina de personaje</div>;
+  return (
+    <>
+      {data && !loading && <CharacterInfo />}
+      {loading && <Spiner />}
+    </>
+  );
 };
 
 export default CharacterPage;
