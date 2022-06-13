@@ -8,7 +8,7 @@ export const CharaContainer = styled.div`
     0 0 0 1px rgb(10 10 10 / 2%);
   border-radius: 5px;
   padding: 16px;
-  height: 300px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,9 +17,17 @@ export const CharaContainer = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 600px) {
+    height: 200px;
+  }
 `;
 
 export const Img = styled.img`
-  max-width: 100%;
+  max-height: 80%;
+  max-width: 90%;
   border-radius: 5px;
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 `;

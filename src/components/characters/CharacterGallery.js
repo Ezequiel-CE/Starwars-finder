@@ -6,7 +6,7 @@ const CharacterGallery = ({ characters }) => {
   return (
     <Grid container spacing={3}>
       {characters.map((data, i) => (
-        <Grid key={i} item xs={12} sm={6} md={2.4}>
+        <Grid key={i} item xs={6} sm={4} md={2.4}>
           <CharacterCard data={data} />
         </Grid>
       ))}
