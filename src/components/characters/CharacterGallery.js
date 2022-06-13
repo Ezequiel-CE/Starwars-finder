@@ -2,7 +2,6 @@ import Grid from "@mui/material/Grid";
 import CharacterCard from "./CharacterCard";
 
 const CharacterGallery = ({ characters }) => {
-  console.log(characters);
   return (
     <Grid container spacing={3}>
       {characters.map((data, i) => (

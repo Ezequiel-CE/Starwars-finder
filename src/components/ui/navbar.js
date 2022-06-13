@@ -13,7 +13,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "Search by name", path: "search" },
+  { name: "Search by name", path: "name" },
   { name: "All Characters", path: "characters" },
 ];
 
