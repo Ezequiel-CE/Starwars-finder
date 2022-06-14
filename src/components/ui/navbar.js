@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 const pages = [
   { name: "Search by name", path: "name" },
   { name: "All Characters", path: "characters" },
+  { name: "Films", path: "films" },
 ];
 
 const NavBar = () => {

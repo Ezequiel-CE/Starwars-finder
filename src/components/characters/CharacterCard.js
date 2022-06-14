@@ -1,5 +1,4 @@
-import { CharaContainer } from "./characters.style";
-import { Img } from "./characters.style";
+import { CharaContainer, Img } from "./characters.style";
 import { Link } from "react-router-dom";
 
 const imgURL = "https://starwars-visualguide.com/assets/img/characters/";
