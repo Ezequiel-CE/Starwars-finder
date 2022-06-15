@@ -9,6 +9,7 @@ import {
 } from "../store/films-slice";
 import Spiner from "../components/ui/Spiner";
 import FilmInfo from "../components/film/FilmInfo";
+import FilmCharacters from "../components/film/FilmCharacters";
 
 const FilmPage = () => {
   const dispatcher = useDispatch();
@@ -31,7 +32,12 @@ const FilmPage = () => {
 
   return (
     <>
-      {currentFilm && !currentFilmLoading && <FilmInfo movie={currentFilm} />}
+      {currentFilm && !currentFilmLoading && (
+        <>
+          <FilmInfo movie={currentFilm} imgId={id} />
+          <FilmCharacters characters={currentFilm.characters} />
+        </>
+      )}
       {currentFilmLoading && <Spiner />}
     </>
   );

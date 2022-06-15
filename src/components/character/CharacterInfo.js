@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 import { Img, Title } from "./character.style";
+import { Link } from "react-router-dom";
 
 const imgURL = "https://starwars-visualguide.com/assets/img/characters/";
 
@@ -64,13 +65,15 @@ const CharacterInfo = () => {
             <strong>Related films:</strong>:
           </p>
           {data.films.map((film, i) => (
-            <img
-              src={`${imgURLFilms}${getFilmID(film)}.jpg`}
-              alt="homeworld planet"
-              height="150"
-              key={i}
-              style={{ padding: "3px" }}
-            />
+            <Link to={`/films/${getFilmID(film)}`}>
+              <img
+                src={`${imgURLFilms}${getFilmID(film)}.jpg`}
+                alt="homeworld planet"
+                height="150"
+                key={i}
+                style={{ padding: "3px" }}
+              />
+            </Link>
           ))}
         </div>
       </Grid>

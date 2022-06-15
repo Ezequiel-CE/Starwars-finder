@@ -2,20 +2,14 @@ import Grid from "@mui/material/Grid";
 
 const filmURL = "https://starwars-visualguide.com/assets/img/films/";
 
-const FilmInfo = ({ movie }) => {
-  const {
-    episode_id: id,
-    title,
-    director,
-    producer,
-    release_date,
-    opening_crawl,
-  } = movie;
+const FilmInfo = ({ movie, imgId }) => {
+  const { episode_id, title, director, producer, release_date, opening_crawl } =
+    movie;
 
   return (
     <Grid container spacing={3} sx={{ marginTop: "50px" }}>
       <Grid item xs={12} md={6}>
-        <img src={`${filmURL}${id}.jpg`} alt={title}></img>
+        <img src={`${filmURL}${imgId}.jpg`} alt={title}></img>
       </Grid>
       <Grid item xs={12} md={6}>
         <h2>{title}</h2>

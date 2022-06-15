@@ -10,7 +10,7 @@ const FilmCard = ({ movie }) => {
   return (
     <FilmContainer>
       <Link to={`/films/${id}`}>
-        <FilmImg src={`${filmURL}${episode_id}.jpg`} alt={title} />
+        <FilmImg src={`${filmURL}${id}.jpg`} alt={title} />
       </Link>
     </FilmContainer>
   );
