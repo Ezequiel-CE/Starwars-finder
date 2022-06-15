@@ -62,15 +62,14 @@ const CharacterInfo = () => {
         </p>
         <div>
           <p>
-            <strong>Related films:</strong>:
+            <strong>Related films:</strong>
           </p>
           {data.films.map((film, i) => (
-            <Link to={`/films/${getFilmID(film)}`}>
+            <Link key={i} to={`/films/${getFilmID(film)}`}>
               <img
                 src={`${imgURLFilms}${getFilmID(film)}.jpg`}
                 alt="homeworld planet"
                 height="150"
-                key={i}
                 style={{ padding: "3px" }}
               />
             </Link>

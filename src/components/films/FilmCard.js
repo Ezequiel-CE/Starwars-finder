@@ -9,7 +9,7 @@ const FilmCard = ({ movie }) => {
 
   return (
     <FilmContainer>
-      <Link to={`/films/${id}`}>
+      <Link to={`/films/${id}`} style={{ textDecoration: "none" }}>
         <FilmImg src={`${filmURL}${id}.jpg`} alt={title} />
       </Link>
     </FilmContainer>

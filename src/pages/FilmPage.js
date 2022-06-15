@@ -17,7 +17,6 @@ const FilmPage = () => {
   const { currentFilm, currentFilmLoading, currentFilmError } = useSelector(
     (state) => state.films
   );
-  console.log(id);
 
   useEffect(() => {
     const fetchMovie = async () => {
