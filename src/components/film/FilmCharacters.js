@@ -8,7 +8,7 @@ const FilmCharacters = ({ characters }) => {
   return (
     <div
       style={{
-        backgroundColor: "rgba(226, 232, 240, 0.5)",
+        backgroundColor: "rgba(226, 232, 240, 1)",
         borderRadius: "5px",
         padding: "10px",
         margin: "50px 0",
@@ -18,6 +18,7 @@ const FilmCharacters = ({ characters }) => {
       <Grid
         container
         sx={{
+          padding: "10px",
           justifyContent: "center",
           alignitems: "center",
           width: "100%",

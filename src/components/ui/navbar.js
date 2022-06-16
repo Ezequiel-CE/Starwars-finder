@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const pages = [
-  { name: "Search by name", path: "name" },
+  { name: "Search by name", path: "/" },
   { name: "All Characters", path: "characters" },
   { name: "Films", path: "films" },
 ];

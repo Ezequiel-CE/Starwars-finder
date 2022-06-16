@@ -33,6 +33,7 @@ const SearchName = () => {
         {...(error ? { error, helperText: "Enter a correct value" } : "")}
         id="outlined-basic"
         fullWidth
+        sx={{ backgroundColor: "white", borderRadius: "5px" }}
         placeholder="Character Name"
         variant="outlined"
         value={enteredSearch}

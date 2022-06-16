@@ -9,6 +9,7 @@ import {
   setErrorCharaPage,
   setLoadingCharaPage,
 } from "../store/characterPage-slice";
+import ErrorComponent from "../components/ui/ErrorComponent";
 
 const CharacterPage = () => {
   const dispatcher = useDispatch();
@@ -22,11 +23,16 @@ const CharacterPage = () => {
         dispatcher(setDataCharaPage(data));
         dispatcher(setLoadingCharaPage(false));
       })
-      .catch((error) => {});
+      .catch((error) => {
+        dispatcher(setLoadingCharaPage(false));
+        dispatcher(setErrorCharaPage(error.message));
+        console.log(error);
+      });
   }, [id, dispatcher]);
 
   return (
     <>
+      {error && <ErrorComponent errorMsg={error} />}
       {data && !loading && <CharacterInfo />}
       {loading && <Spiner />}
     </>

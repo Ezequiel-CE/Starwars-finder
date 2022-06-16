@@ -1,10 +1,8 @@
-import NotFound from "../../assets/notFound.png";
+import errorImg from "../../assets/error.png";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
-import { NotFoundImg } from "./name.styled";
 import { css } from "@emotion/css";
 
-const NoFound = () => {
+const ErrorComponent = ({ errorMsg }) => {
   return (
     <Grid container sx={{ marginTop: "100px" }}>
       <Grid
@@ -27,27 +25,20 @@ const NoFound = () => {
             }
           `}
         >
-          Look like the force is not here{" "}
+          {errorMsg}
         </h2>
-        <p
-          className={css`
-            font-size: 20px;
-          `}
-        >
-          Try to{" "}
-          {
-            <Link to="/name" style={{ textDecoration: "none" }}>
-              search
-            </Link>
-          }{" "}
-          a diferent character.
-        </p>
       </Grid>
       <Grid item xs={12} md={6}>
-        <NotFoundImg src={NotFound} alt="yoda not found " />
+        <img
+          className={css`
+            width: 100%;
+          `}
+          src={errorImg}
+          alt="yoda not found "
+        />
       </Grid>
     </Grid>
   );
 };
 
-export default NoFound;
+export default ErrorComponent;

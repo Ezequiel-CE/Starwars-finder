@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 export const Img = styled.img`
   width: 400px;
   height: 550px;
-  border-radius: 5px;
+  margin: 50px 0;
+
   @media (max-width: 600px) {
     width: 80%;
     height: auto;

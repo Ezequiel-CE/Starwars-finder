@@ -21,10 +21,12 @@ const CharacterInfo = () => {
   return (
     <Grid
       container
-      spacing={3}
       sx={{
         marginTop: "50px",
         marginBottom: "50px",
+        backgroundColor: "rgba(226, 232, 240, 1)",
+        borderRadius: "5px",
+        padding: "10px",
       }}
     >
       <Grid
@@ -39,7 +41,7 @@ const CharacterInfo = () => {
       >
         <Img src={`${imgURL}${id}.jpg`} alt={data.name} />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} sx={{}}>
         <Title>{data.name}</Title>
         <p>
           <strong>Birth year</strong> : {data.birth_year}

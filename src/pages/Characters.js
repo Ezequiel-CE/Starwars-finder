@@ -10,14 +10,11 @@ import {
   setDataChara,
   setPageChara,
   setLoadingChara,
-  setErrorChara,
 } from "../store/character-slice";
 
 const Characters = () => {
   const dispatcher = useDispatch();
-  const { data, page, loading, error } = useSelector(
-    (state) => state.characters
-  );
+  const { data, page, loading } = useSelector((state) => state.characters);
   let pages;
 
   if (data && (data.next || data.previous)) {

@@ -49,7 +49,7 @@ const FilmInfo = ({ movie, imgId }) => {
         xs={12}
         md={6}
         sx={{
-          backgroundColor: "rgba(226, 232, 240, 0.5)",
+          backgroundColor: "rgba(226, 232, 240, 1)",
           borderRadius: "5px",
           padding: "10px",
         }}

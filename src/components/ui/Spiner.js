@@ -11,7 +11,7 @@ const Spiner = () => {
         alignItems: "center",
       }}
     >
-      <CircularProgress />
+      <CircularProgress sx={{ color: "white" }} />
     </Box>
   );
 };

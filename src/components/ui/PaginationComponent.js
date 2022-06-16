@@ -1,7 +1,6 @@
 import React from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { useState } from "react";
 
 export function PaginationComponent({ page, handleChange, pages }) {
   return (
@@ -12,7 +11,12 @@ export function PaginationComponent({ page, handleChange, pages }) {
         margin: "50px 0",
       }}
     >
-      <Pagination page={page} count={pages} onChange={handleChange} />
+      <Pagination
+        page={page}
+        count={pages}
+        onChange={handleChange}
+        sx={{ backgroundColor: "white", borderRadius: "50px" }}
+      />
     </Stack>
   );
 }

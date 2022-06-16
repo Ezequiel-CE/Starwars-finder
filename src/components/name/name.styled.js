@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 export const NameTitle = styled.h2`
   text-align: center;
+  color: white;
+  font-size: 40px;
 `;
 
 export const NotFoundImg = styled.img`

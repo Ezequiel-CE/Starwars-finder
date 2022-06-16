@@ -6,7 +6,7 @@ const initialState = {
   error: null,
   currentFilm: null,
   currentFilmLoading: false,
-  currentFilmError: false,
+  currentFilmError: null,
 };
 
 export const filmsSlice = createSlice({

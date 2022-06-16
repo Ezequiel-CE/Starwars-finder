@@ -6,37 +6,42 @@ import {
   setDataFilm,
   setErrorFilm,
   setLoadingFilm,
-  setCurrentFilm,
 } from "../store/films-slice";
 import Spiner from "../components/ui/Spiner";
 import FilmsGallery from "../components/films/FilmsGallery";
+import ErrorComponent from "../components/ui/ErrorComponent";
 
 const Films = () => {
   const dispatcher = useDispatch();
-  const { data, loading, error, currentFilm } = useSelector(
-    (state) => state.films
-  );
+  const { data, loading, error } = useSelector((state) => state.films);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      dispatcher(setLoadingFilm(true));
-      const filmsData = await getAllFilms();
-      dispatcher(setDataFilm(filmsData));
-      dispatcher(setLoadingFilm(false));
+      try {
+        dispatcher(setLoadingFilm(true));
+        const filmsData = await getAllFilms();
+        dispatcher(setDataFilm(filmsData));
+        dispatcher(setLoadingFilm(false));
+        dispatcher(setErrorFilm(null));
+      } catch (error) {
+        dispatcher(setLoadingFilm(false));
+        dispatcher(setErrorFilm(error.message));
+      }
     };
 
-    try {
-      fetchMovies();
-    } catch (error) {
-      console.log(error);
-    }
+    fetchMovies();
   }, [dispatcher]);
 
   return (
     <>
-      <TitleFilms>Star Wars Films</TitleFilms>
+      {error && !loading && <ErrorComponent errorMsg={error} />}
       {loading && <Spiner />}
-      {data && !loading && <FilmsGallery movies={data.results} />}
+      {data && !loading && (
+        <>
+          <TitleFilms>Star Wars Films</TitleFilms>{" "}
+          <FilmsGallery movies={data.results} />{" "}
+        </>
+      )}
     </>
   );
 };
