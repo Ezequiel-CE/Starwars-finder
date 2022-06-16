@@ -9,9 +9,7 @@ import NoFound from "../components/name/Nofound";
 
 const Search = () => {
   const dispatcher = useDispatch();
-  const { error, enteredSearch, data, loading } = useSelector(
-    (state) => state.name
-  );
+  const { enteredSearch, data, loading } = useSelector((state) => state.name);
   const [page, setPage] = useState(1);
 
   const handleChangePagination = (e, value) => {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const filmURL = "https://starwars-visualguide.com/assets/img/films/";
 
 const FilmCard = ({ movie }) => {
-  const { episode_id, title, url } = movie;
+  const { title, url } = movie;
   const id = Number(url.split("/").slice(-2)[0]);
 
   return (
